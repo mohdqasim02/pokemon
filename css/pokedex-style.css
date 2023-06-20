@@ -6,7 +6,6 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  /* background-color: rgb(215, 235, 242); */
   font-size: 20px;
 }
 
@@ -17,16 +16,23 @@ body {
 }
 
 .heading h1 {
+  font-size: 5em;
+  color: transparent;
   width: fit-content;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  margin: 1em auto;
+  margin: 0.5em auto;
+  border-bottom: 1px solid black;
+
+  background: url(https://image.winudf.com/v2/image/Y29tLnRvcHJha3Jpbmd0b25lZGV2LnBva2Vtb253YWxscGFwZXJzYW5kYmFja2dyb3VuZHBpY3R1cmVzX3NjcmVlbl8wXzE1Mjg3NTYzMDBfMDIx/screen-0.webp?fakeurl=1&type=.webp);
+  background-size: contain;
+  background-clip: content-box;
+  -webkit-background-clip: text;
+
 }
 
 .cards {
   display: table;
   border-collapse: separate;
   border-spacing: 1em;
-  box-sizing: content-box;
   margin: auto;
 }
 
@@ -35,10 +41,9 @@ body {
 }
 
 .card {
-  width: 250px;
+  width: 300px;
   padding: 0.8em;
   display: table-cell;
-  box-sizing: content-box;
   border-radius: 5px;
   border: 2px solid rgba(255, 255, 255, 0);
   background-color: rgb(173, 216, 230);
@@ -54,6 +59,11 @@ body {
   height: 10em;
   margin-bottom: 0.5em;
   background-color: rgb(215, 235, 242);
+  text-align: center;
+}
+
+.image img {
+  height: 100%;
 }
 
 .card .data table {
@@ -87,87 +97,4 @@ body {
   border-radius: 5px;
   padding: 0.1em 0.5em;
   margin: 0 0.2em;
-}
-
-.grass {
-  background-color: rgb(155, 203, 80);
-}
-
-.poison {
-  background-color: rgb(186, 127, 200);
-  color: antiquewhite;
-}
-
-.rock {
-  background-color: rgb(163, 143, 33);
-  color: antiquewhite;
-}
-
-.fire {
-  background-color: rgb(255, 125, 37);
-}
-
-.electric {
-  background-color: rgb(238, 213, 53);
-}
-
-.ground {
-  background-color: rgb(209, 187, 64);
-  color: antiquewhite;
-}
-
-.water {
-  background-color: rgb(69, 146, 195);
-  color: antiquewhite;
-}
-
-.bug {
-  background-color: rgb(110, 156, 60);
-  color: antiquewhite;
-}
-
-.flying {
-  background-color: rgb(125, 192, 211);
-}
-
-.normal {
-  background-color: rgb(163, 172, 175);
-  color: antiquewhite;
-}
-
-.fairy {
-  background-color: rgb(253, 185, 233);
-}
-
-.fighting {
-  background-color: rgb(213, 113, 35);
-  color: antiquewhite;
-}
-
-.psychic {
-  background-color: rgb(243, 102, 185);
-}
-
-.steel {
-  background-color: rgb(158, 183, 184);
-  color: antiquewhite;
-}
-
-.ice {
-  background-color: rgb(81, 195, 231);
-}
-
-.ghost {
-  background-color: rgb(123, 98, 163);
-  color: antiquewhite;
-}
-
-.dragon {
-  background-color: rgb(241, 110, 87);
-  color: antiquewhite;
-}
-
-.dark {
-  background-color: rgb(112, 112, 112);
-  color: antiquewhite;
 }

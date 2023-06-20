@@ -1,6 +1,14 @@
 const fs = require("fs");
 
-const img = () => `<img src"" alt="">`;
+let pokeIndex = 0;
+const img = () => {
+  pokeIndex++;
+  const pokemon = pokeIndex.toString().padStart(3, '00');
+  const url = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokemon}.png`;
+
+  return `<img src="${url}" alt="">`;
+}
+
 const element = (tag, content) => `<${tag}>${content}</${tag}>`;
 const elementWithClass = (tag, content, cls) => `<${tag} class="${cls}">${content}</${tag}>`;
 
