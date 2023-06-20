@@ -19,7 +19,7 @@ body {
 }
 
 .heading h1 {
-  font-size: 5em;
+  font-size: 3em;
   color: transparent;
   width: fit-content;
   margin: 0.5em auto;
@@ -31,14 +31,12 @@ body {
 }
 
 .cards {
-  /* display: table; */
   height: 520px;
   width: max-content;
   border-collapse: separate;
   border-spacing: 1em;
   margin: auto;
   overflow: scroll;
-  background-color: hsl(195, 53%, 30%);
 }
 
 .cards .rows {
@@ -56,8 +54,8 @@ body {
 
 .card:hover {
   cursor: pointer;
-  background-color: hsl(195, 53%, 68%);
-  border: 1px solid hsl(195, 53%, 50%);
+  box-shadow: 4px 5px 8px 2px hsl(195, 53%, 20%);
+  background-color: hsl(195, 53%, 72%);
 }
 
 .card .image {
