@@ -42,18 +42,18 @@ const main = ([filePath, separator]) => {
     return divData(name + table(tbody(tableContent.join("\n"))));
   });
 
-  const sections = [];
+  // const sections = [];
   const card = pokemonData.map(pokemon => divCard(emptyImg() + pokemon));
 
-  for (let index = 0; index < card.length; index += 4) {
-    const row = card[index] +
-      "\n" + card[index + 1] +
-      "\n" + card[index + 2] +
-      "\n" + (card[index + 3] || "");
-    sections.push(sectionRows(row));
-  }
+  // for (let index = 0; index < card.length; index += 4) {
+  //   const row = card[index] +
+  //     "\n" + card[index + 1] +
+  //     "\n" + card[index + 2] +
+  //     "\n" + (card[index + 3] || "");
+  //   sections.push(sectionRows(row));
+  // }
 
-  console.log(mainCards(sections.join("\n")));
+  console.log(mainCards(card.join("\n")));
 }
 
 main(process.argv.slice(2));
