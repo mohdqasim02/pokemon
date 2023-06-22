@@ -13,7 +13,7 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 5;
 }
 
 .page {
@@ -46,11 +46,13 @@ body {
   border: 4px solid rgba(255, 255, 255, 0);
   background-color: hsl(195, 53%, 79%);
 
-  flex-grow: 1;
-
   display: flex;
   flex-direction: column;
   row-gap: 0.5em;
+  flex-grow: 1;
+
+  transition: cubic-bezier();
+  transition-duration: 1s;
 }
 
 .content {
@@ -72,12 +74,12 @@ body {
   padding: 0.2em 0;
   border-bottom: 1px dashed rgba(46, 46, 46, 0.3);
 
-  transition: cubic-bezier();
+  transition: cubic-bezier(0.6, 0.04, 0.98, 0.335);
   transition-duration: 1s;
 }
 
 .card .image {
-  height: 8em;
+  aspect-ratio: 1;
   background-color: hsl(195, 51%, 88%);
   text-align: center;
 }
@@ -110,7 +112,7 @@ body {
 }
 
 .cards:has(.card:hover) .card {
-  filter: blur(10px);
+  filter: opacity(0.6) blur(5px);
 }
 
 .card:hover {
@@ -122,14 +124,20 @@ body {
 }
 
 .card:hover .detail {
-  transform: translate(-290px, -70px);
+  transform: translate(-290px, -240px);
 
+  border: 0px;
   border-radius: 5px;
-  padding: 0.5em 1em;
+  padding: 0.2em 0.3em;
   background-color: hsl(195, 53%, 70%);
-  border: 1px solid black;
+  box-shadow: 4px 4px 4px hsl(195, 53%, 40%);
 }
 
 .card:hover .detail:nth-child(even) {
-  transform: translate(290px, -70px);
+  transform: translate(290px, -240px);
+}
+
+.card:hover {
+  height: 280px;
+  transform: translateY(100px);
 }
