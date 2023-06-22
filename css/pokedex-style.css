@@ -17,32 +17,6 @@ body {
   gap: 1em;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: hsl(195, 53%, 50%);
-}
-
-.navbar ul {
-  display: flex;
-  gap: 1em;
-  padding: 1em 2em;
-  list-style: none;
-}
-
-.navbar a {
-  color: hsl(195, 53%, 25%);
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  padding: 0.2em;
-  text-decoration: none;
-  border-bottom: 2px solid rgba(0, 0, 0, 0);
-}
-
-.navbar a:hover {
-  border-bottom: 2px solid hsl(195, 53%, 15%);
-}
-
 .page {
   position: relative;
   top: 0;
