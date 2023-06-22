@@ -13,18 +13,16 @@ const element = (tag, content) => `<${tag}>${content}</${tag}>`;
 const elementWithClass = (tag, content, cls) => `<${tag} class="${cls}">${content}</${tag}>`;
 
 const h3 = (content) => element("h3", content);
-const td = (content) => element("td", content);
-const th = (content) => element("th", content);
-const tr = (content) => element("tr", content);
-const tbody = (content) => element("tbody", content);
-const table = (content) => element("table", content);
+const divValue = (content) => elementWithClass("div", content, "value");
+const divCategory = (content) => elementWithClass("div", content, "category");
 const divCard = (content) => elementWithClass("div", content, "card");
 const divData = (content) => elementWithClass("div", content, "data");
+const divContent = (content) => elementWithClass("div", content, "Content");
 const divImage = (content) => elementWithClass("div", content, "image");
+const divDetail = (content) => elementWithClass("div", content, "detail");
 const mainCards = (content) => elementWithClass("main", content, "cards");
 const spanClass = (content) => elementWithClass("span", content, content);
-const sectionRows = (content) => elementWithClass("section", content, "rows");
-const emptyImg = () => divImage(img());
+const orderedImage = () => divImage(img());
 
 const main = ([filePath, separator]) => {
   const data = fs.readFileSync(filePath, "utf-8").trim();
@@ -34,24 +32,15 @@ const main = ([filePath, separator]) => {
   const pokemonData = rows.slice(1).map(row => {
     const name = h3(row[0]);
     const tableContent = row.slice(1).map((feildData, index) => {
-      const category = th(feilds[index]);
-      const values = td(feildData.split(",").map(spanClass).join(""));
+      const category = divCategory(element("span", feilds[index]));
+      const values = divValue(feildData.split(",").map(spanClass).join(""));
 
-      return tr(category + values);
+      return divDetail(category + values);
     });
-    return divData(name + table(tbody(tableContent.join("\n"))));
+    return divContent(name + divData(tableContent.join("\n")));
   });
 
-  // const sections = [];
-  const card = pokemonData.map(pokemon => divCard(emptyImg() + pokemon));
-
-  // for (let index = 0; index < card.length; index += 4) {
-  //   const row = card[index] +
-  //     "\n" + card[index + 1] +
-  //     "\n" + card[index + 2] +
-  //     "\n" + (card[index + 3] || "");
-  //   sections.push(sectionRows(row));
-  // }
+  const card = pokemonData.map(pokemon => divCard(orderedImage() + pokemon));
 
   console.log(mainCards(card.join("\n")));
 }
