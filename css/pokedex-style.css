@@ -52,7 +52,7 @@ body {
   flex-grow: 1;
 
   transition: cubic-bezier();
-  transition-duration: 1s;
+  transition-duration: 500ms;
 }
 
 .content {
@@ -75,7 +75,7 @@ body {
   border-bottom: 1px dashed rgba(46, 46, 46, 0.3);
 
   transition: cubic-bezier(0.6, 0.04, 0.98, 0.335);
-  transition-duration: 1s;
+  transition-duration: 500ms;
 }
 
 .card .image {
@@ -140,4 +140,10 @@ body {
 .card:hover {
   height: 280px;
   transform: translateY(100px);
+}
+
+@media screen and (max-width:1700px) {
+  .card:hover .detail {
+    display: none;
+  }
 }
